@@ -1,0 +1,63 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin View</title>
+    <style>
+        h1{
+            color: #4caf50;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+        a{
+    color: #4caf50;
+
+        }
+    </style>
+</head>
+<body>
+    <h1><center>Admin View</center></h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Mobile</th>
+                <th>Gender</th>
+                <th>DOB</th>
+                <th>Qualification</th>
+                <th>Password</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% registrations.forEach(registration => { %>
+                <tr>
+                    <td><%= registration.name %></td>
+                    <td><%= registration.email %></td>
+                    <td><%= registration.mobile %></td>
+                    <td><%= registration.gender %></td>
+                    <td><%= registration.dob %></td>
+                    <td><%= registration.qualification %></td>
+                    <td><%= registration.password %></td>
+                </tr>
+            <% }); %>
+        </tbody>
+    </table>
+    <a href="/logout">Logout</a>
+</body>
+</html>
